@@ -17,3 +17,8 @@ cd ..
 Write-Output("Docker build")
 docker build -t mcublog/confpoint-docker .
 
+if (Test-Path -Path $confpoint) {
+    Remove-Item	$confpoint -Recurse -Force -Confirm:$false
+}
+
+
